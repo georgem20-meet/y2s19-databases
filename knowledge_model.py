@@ -5,7 +5,26 @@ from sqlalchemy import create_engine
 
 Base = declarative_base()
 
-class Knowledge(Base):
+class Football(Base):
+	__tablename__ = "Football"
+	football_id= Column(Integer, primary_key = True)
+	name = Column(String)
+	Ballon_dor= Column(Integer)
+	GOAT = Column(Boolean)
+
+
+	def __repr__(self):
+		return("Football name: {}\n"
+			"Ballon_dor: {}\n"
+			"GOAT: {}\n").format(
+				self.name,
+				self.Ballon_dor,
+				self.GOAT)
+
+# x = Football(name= "Cristiano Ronaldo", Ballon_dor= 5, GOAT= False)
+# print(x)
+
+
 	# Create a table with 4 columns
 	# The first column will be the primary key
 	# The second column should be a string representing
@@ -14,4 +33,4 @@ class Knowledge(Base):
 	# topic of the article. The last column will be
 	# an integer, representing your rating of the article.
 
-	pass
+	
